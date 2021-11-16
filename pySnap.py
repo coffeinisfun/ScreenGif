@@ -5,7 +5,9 @@ import sys
 
 def makeGif(frames, duration):
     frame_one = frames[0]
-    frame_one.save("my_awesome.gif", format="GIF", append_images=frames,
+    name = time.strftime("%H%M%S",time.localtime()) + ".gif"
+
+    frame_one.save(name, format="GIF", append_images=frames,
                save_all=True, duration=1000, loop=0)
 
 

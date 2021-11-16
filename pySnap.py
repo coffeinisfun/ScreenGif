@@ -1,5 +1,6 @@
 import pyautogui
 import time
+import datetime
 from PIL import Image
 import sys
 
@@ -20,7 +21,7 @@ def screenGif(interval, maxTime):
         now += interval
         screenshot = pyautogui.screenshot()
         screenshots.append(screenshot)
-        print("snap")
+        print("snap @ " + datetime.datetime.now().strftime("%H-%M-%S"))
 
     makeGif(screenshots, 100*maxTime/interval)
 
